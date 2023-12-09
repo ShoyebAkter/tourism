@@ -81,7 +81,7 @@ ul.menu {
 
 /*=============================Banner=============================*/
 .banner {
-    background-image: url("https://res.cloudinary.com/dxssqb6l8/image/upload/v1605294054/young-woman-enjoying-beautiful-scenery-of-lago-di-braies-italy-picjumbo-com_aa0fvw.jpg");
+    background-image: url("./images/coverphoto.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -214,8 +214,8 @@ ul.menu {
 }
 
 .service-item img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     flex: 1;
 }
 
