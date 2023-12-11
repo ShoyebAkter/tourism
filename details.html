@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./details.css"/>
+</head>
+<body>
+    <div>
+        <div>
+            <div>About our guide Fahan</div>
+            <div>I’m an instructor of sushi making for foreign travelers and got the national license as a tour guide last year. Therefore I can provide a guiding for Tsukiji/Omiya fish market and a private lesson for the traditional sushi making for both. If you are interested in bonsai too, travering omiya is a perfect idea since I can provide for all these.
+
+                I hope I have a chance to help you for unforgetable Japan travel experience.</div>
+        </div>
+        <div class="bookingSection">
+            <div class="nameSection">
+                <img src="./images/guides/fahan.png" alt=""/>
+                <div>Fahan</div>
+                
+            </div>
+            <div><span class="rating">&#11088;&#11088;&#11088;&#11088;&#11088;</span>5.00/5</div>
+            <div class="horizontal-line"></div>
+            <input class="dateSection" type="date" >
+            <div class="peopleSection">
+                <div>
+                    <label for="adults">Adults:</label>
+                <select id="adults">
+                    <!-- You can set the initial number of adults here -->
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <!-- Add more options as needed -->
+                </select>
+                <button onclick="decrease('adults')">-</button>
+                <button onclick="increase('adults')">+</button>
+                </div>
+                <div >
+                    <label for="children">Children:</label>
+                <select id="children">
+                    <!-- You can set the initial number of children here -->
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <!-- Add more options as needed -->
+                </select>
+            
+                <!-- Buttons to increase or decrease the number of guests -->
+                
+            
+                <button onclick="decrease('children')">-</button>
+                <button onclick="increase('children')">+</button>
+                </div>
+            </div>
+            <div>
+                <button>Message Fahan</button>
+            </div>
+            <div>
+                <div>Available Address</div>
+                <div>Malaysia</div>
+            </div>
+            <div>
+                <div>Languages</div>
+                <div>English</div>
+            </div>
+            <div>
+                <div>Response Time</div>
+                <div>2 Hours on avg</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function increase(type) {
+            var selectElement = document.getElementById(type);
+            selectElement.value = parseInt(selectElement.value) + 1;
+        }
+
+        function decrease(type) {
+            var selectElement = document.getElementById(type);
+            var value = parseInt(selectElement.value);
+            if (value > 0) {
+                selectElement.value = value - 1;
+            }
+        }
+    </script>
+</body>
+</html>
