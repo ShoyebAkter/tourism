@@ -280,6 +280,7 @@ ul.menu {
     align-items: center;
     justify-content: center;
     text-align: center;
+    cursor: pointer;
 }
 
 .cards .time {
