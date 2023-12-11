@@ -1,13 +1,13 @@
 .bookingSection{
     width: 300px;
-    background-color: aliceblue;
-    border: 1px solid black;
+    border: 1px solid #f5f5f5;
+    border-radius: 20px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    gap: 20px;
-    
+    padding-block: 30px;
 }
 .nameSection img{
     width: 70px;
@@ -22,7 +22,7 @@
 .horizontal-line {
     border-top: 1px solid #7a7676; /* You can adjust the color and thickness */
     width: 80%; /* Set the width to 100% to span the entire container */
-    margin: 20px 0; /* Add some margin for spacing */
+    margin: 2px 0; /* Add some margin for spacing */
 }
 .dateSection{
     padding: 15px;
@@ -30,5 +30,68 @@
     font-family: Roboto;
     border-radius: 5px;
     outline: 0;
+    border: 1px solid #ccc;
+    margin-block: 5px;
+}
+
+.peopleSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.peopleSection label {
+    margin-right: 10px;
+}
+
+.peopleSection select {
+    padding: 5px;
+    font-size: 14px;
+}
+
+.peopleSection button {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.peopleSection button:hover {
+    background-color: #333;
+    color: #fff;
+}
+.msgBtn{
     border: none;
+    padding: 15px 30px;
+    background-color: #5e4697;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.addressSection{
+    background-color:#fff;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+}
+.addressSection img{
+    width: 30px;
+    height: 30px;
+    margin-inline: 10px;
+}
+.addressSection div{
+    padding: 0;
+    font-size: large;
+    font-weight: 600;
+    padding-left: 20px;
+}
+.addressSection p{
+    font-size: medium;
+    font-weight: 500;
+    padding-left: 20px;
 }
