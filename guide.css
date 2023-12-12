@@ -22,7 +22,6 @@ body {
 .card {
     padding: 15px;
     width: 350px;
-    background: #222;
     border-radius: 5px;
     text-align: center;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
@@ -30,17 +29,15 @@ body {
 }
 
 .cover-photo {
-    position: relative;
-    background: url(https://i.imgur.com/jxyuizJ.jpeg);
     background-size: cover;
-    height: 180px;
     border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile {
-    position: absolute;
     width: 120px;
-    bottom: -60px;
     left: 15px;
     border-radius: 50%;
     border: 2px solid #222;
@@ -51,12 +48,13 @@ body {
 .profile-name {
     font-size: 20px;
     margin: 25px 0 0 120px;
-    color: #fff;
+    color: #0f0f0f;
 }
 
 .about {
     margin-top: 30px;
     line-height: 1.6;
+    color: #0f0f0f;
 }
 
 .btn {

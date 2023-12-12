@@ -117,7 +117,7 @@
                 var password = document.getElementById("signuppass").value;
                 console.log(email, password);
     
-                createUserWithEmailAndPassword(myauth, email, password)
+                createUserWithEmailAndPassword(auth, email, password)
                     .then(function (userCredential) {
                         var user = userCredential.user;
                         console.log("User created:", user);

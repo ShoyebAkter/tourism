@@ -67,7 +67,15 @@ ul.menu {
     font-family: "Barlow Condensed";
     text-align: center;
 }
-
+#authSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#authSection img{
+    width: 20px;
+    height: 20px;
+}
 .menu li a {
     text-decoration: none;
     color: #000;
@@ -76,7 +84,6 @@ ul.menu {
 
 .menu li a:hover {
     color: midnightblue;
-    text-decoration: underline;
 }
 
 /*=============================Banner=============================*/
