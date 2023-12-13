@@ -40,3 +40,29 @@ const sendMsg = () => {
                     })
     
 }
+
+function showPaymentToast() {
+    // Create a new toast element
+    const toast = document.createElement("div");
+    toast.className = "toast";
+    toast.innerHTML = "Your payment is successful";
+    const cardNumber=document.getElementById("cardnumber").value;
+    const expDate=document.getElementById("expirationdate").value;
+    if(cardNumber && expDate){
+        document.getElementById("payment-toast-container").appendChild(toast);
+  
+        // Show the toast
+        setTimeout(function () {
+          toast.style.display = "block";
+        }, 200);
+      
+        // Hide the toast after 3 seconds
+        setTimeout(function () {
+          toast.style.display = "none";
+          // Remove the toast element from the DOM after it's hidden
+          document.getElementById("payment-toast-container").removeChild(toast);
+        }, 3000);
+    }
+    // Append the toast to the container
+    
+  }

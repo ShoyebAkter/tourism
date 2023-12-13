@@ -656,6 +656,7 @@ input {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    height: 250px;
 }
 
 /* Styling for the close button */
@@ -672,6 +673,8 @@ input {
 /* Styling for the content inside the popup */
 .content {
     text-align: center;
+    width: 300px;
+    height: 100px;
 }
 
 /* Styling for the message textarea */
@@ -686,4 +689,34 @@ input {
     width: 300px;
     height: 100px;
   }
-  
+  /* Container for all toasts */
+#payment-toast-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 16px;
+    z-index: 1000; /* Adjust the z-index as needed */
+}
+
+/* Styling for individual toast */
+.toast {
+    display: none;
+    background-color: #4CAF50; /* Green background color */
+    color: #fff; /* White text color */
+    padding: 15px; /* Padding around the content */
+    margin-bottom: 10px; /* Space between toasts */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+}
+
+/* Optional: Add animation for fading in and out */
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.toast {
+    animation: fadeInOut 5s ease-in-out; /* Adjust the duration as needed */
+}

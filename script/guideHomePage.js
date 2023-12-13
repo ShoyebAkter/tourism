@@ -2,7 +2,8 @@ const itemContainer = document.getElementById('messageContainer');
 
     const getMessage=async()=>{
         let messages;
-        await fetch('http://localhost:3000/message/Tahsin')
+        const name=localStorage.getItem("guideName")
+        await fetch(`http://localhost:3000/message/${name}`)
         .then((res) => res.json())
         .then((result) => {messages=result })
         .catch((error) => console.error(error))

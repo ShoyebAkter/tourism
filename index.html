@@ -41,6 +41,7 @@
                         <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                     <span class="details">or use your email password</span>
+                    <input class="morph_input" id="loginName" type="name" placeholder="Name">
                     <input class="morph_input" id="loginEmail" type="email" placeholder="Email">
                     <input class="morph_input" id="loginPass" type="password" placeholder="Password">
                     <a href="#" class="for_get">Forget Your Password?</a>
@@ -93,6 +94,7 @@
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         function login() {
+            var loginName = document.getElementById("loginName").value;
             var loginEmail = document.getElementById("loginEmail").value;
             var loginPassword = document.getElementById("loginPass").value;
             console.log(loginEmail, loginPassword);
@@ -100,13 +102,14 @@
             signInWithEmailAndPassword(auth, loginEmail, loginPassword)
                 .then(async function (userCredential) {
                     var user = userCredential.user;
-
+                    localStorage.setItem("guideName",loginName)
                     await fetch('http://localhost:3000/user')
                         .then((res) => res.json())
                         .then((result) => { emailInfo = result })
                         .catch((error) => console.error(error))
                     const userInfo = {
-                        email: loginEmail
+                        email: loginEmail,
+                        name:loginName
                     }
                     const isEmailInArray = emailInfo.some(obj => obj.email === loginEmail);
                     if (!isEmailInArray) {
