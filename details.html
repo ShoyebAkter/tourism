@@ -13,13 +13,14 @@
         <div class="guideDetails">
             <div class="nameSection">
                 <img src="./images/guides/fahan.png" alt="" />
-                <div>Fahan
+                <div>
+                    <p id="name"></p>
                     <div><span class="rating">&#11088;&#11088;&#11088;&#11088;&#11088;</span>5.00/5</div>
                 </div>
 
             </div>
             
-            <div class="instructor">About our guide Fahan</div>
+            <div class="instructor">About our guide <span id="guideName"></span></div>
             <div class="abouthorizontal-line"></div>
             <div class="aboutSection">I’m an instructor of sushi making for foreign travelers and got the national license as a tour guide
                 last year. Therefore I can provide a guiding for Tsukiji/Omiya fish market and a private lesson for the
@@ -65,7 +66,8 @@
         <div class="bookingSection">
             <div class="nameSection">
                 <img src="./images/guides/fahan.png" alt="" />
-                <div>Fahan
+                <div>
+                    <p id="tourGuide"></p>
                     <div><span class="rating">&#11088;&#11088;&#11088;&#11088;&#11088;</span>5.00/5</div>
                 </div>
 
@@ -84,16 +86,15 @@
                     <input type="number"/>
                 </div>
             </div>
-            <div><a href="#popup1"><button class="msgBtn">Message Fahan</button></a>
-                
+            <div><a href="#popup1"><button class="msgBtn">Message <span id="tourguidename"></span></button></a>    
             </div>
             <div id="popup1" class="overlay">
                 <div class="popup">
                     <a class="close" href="#">&times;</a>
-                    <div class="content">
+                    <div  class="content">
                         Write you message
-                        <div><textarea></textarea></div>
-                        <button class="msgBtn">Send</button>
+                        <div><textarea id="msg"></textarea></div>
+                        <button onclick="sendMsg()" class="msgBtn">Send</button>
                     </div>
                 </div>
             </div>

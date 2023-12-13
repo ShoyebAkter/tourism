@@ -25,7 +25,7 @@
                         <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                     <span>or use your email for registeration</span>
-                    <input type="text" class="morph_input" placeholder="Name">
+                    <input type="text" id="signUpName" class="morph_input" placeholder="Name">
                     <input type="email" id="signupemail" class="morph_input" placeholder="Email">
                     <input type="password" id="signuppass" class="morph_input" placeholder="Password">
                     <button id="signUpBtn" class="morph_button">Sign Up</button>
@@ -70,7 +70,7 @@
         </div>
 
     </div>
-   
+
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -96,12 +96,38 @@
             var loginEmail = document.getElementById("loginEmail").value;
             var loginPassword = document.getElementById("loginPass").value;
             console.log(loginEmail, loginPassword);
-
+            let emailInfo;
             signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-                .then(function (userCredential) {
+                .then(async function (userCredential) {
                     var user = userCredential.user;
-                    console.log("Login successful:", user);
-                    window.location.href = "homepage.html";
+
+                    await fetch('http://localhost:3000/user')
+                        .then((res) => res.json())
+                        .then((result) => { emailInfo = result })
+                        .catch((error) => console.error(error))
+                    const userInfo = {
+                        email: loginEmail
+                    }
+                    const isEmailInArray = emailInfo.some(obj => obj.email === loginEmail);
+                    if (!isEmailInArray) {
+                        fetch("http://localhost:3000/user", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            }, body: JSON.stringify(userInfo)
+                        })
+                        window.location.href = "homepage.html";
+                    } else {
+                        const userObject = emailInfo.find(obj => obj.email === loginEmail);
+                        const userRole = userObject.role;
+                        if (userRole === "guide") {
+                            window.location.href = "guideHomePage.html"
+                        } else {
+                            window.location.href = "homepage.html";
+                        }
+                    }
+
+
                 })
                 .catch(function (error) {
                     console.error("Error creating user:", error);
@@ -112,24 +138,25 @@
             login();
         });
         function signUp() {
-                
-                var email = document.getElementById("signupemail").value;
-                var password = document.getElementById("signuppass").value;
-                console.log(email, password);
-    
-                createUserWithEmailAndPassword(auth, email, password)
-                    .then(function (userCredential) {
-                        var user = userCredential.user;
-                        console.log("User created:", user);
-                    })
-                    .catch(function (error) {
-                        console.error("Error creating user:", error);
-                    });
-            }
-            document.getElementById("signUpBtn").addEventListener("click", function (event) {
-                event.preventDefault();
-                signUp();
-            });
+
+            var name = document.getElementById("signUpName").value;
+            var email = document.getElementById("signupemail").value;
+            var password = document.getElementById("signuppass").value;
+            console.log(email, password);
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then(function (userCredential) {
+                    var user = userCredential.user;
+                    console.log("User created:", user);
+                })
+                .catch(function (error) {
+                    console.error("Error creating user:", error);
+                });
+        }
+        document.getElementById("signUpBtn").addEventListener("click", function (event) {
+            event.preventDefault();
+            signUp();
+        });
     </script>
     <!-- <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
     <script src="./script/index.js"></script>

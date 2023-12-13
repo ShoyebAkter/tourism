@@ -54,7 +54,7 @@ const initApp = () => {
     </div>
     
     <p class="about">"${item.description}"</p>
-    <button onclick="select()" class="btn">Select</button>
+    <button onclick="select('${item.name}')" class="btn">Select</button>
     <div class="icons">
         <i class="fa-brands fa-linkedin"></i>
         <i class="fa-brands fa-github"></i>
@@ -66,6 +66,7 @@ const initApp = () => {
         itemContainer.innerHTML = itemsHTML;
 }
 initApp()
-const select=()=>{
+const select=(name)=>{
+    localStorage.setItem("guide",name);
     window.location.href="details.html";
 }
