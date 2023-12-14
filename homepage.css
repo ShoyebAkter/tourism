@@ -71,6 +71,7 @@ ul.menu {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 #authSection img{
     width: 20px;
