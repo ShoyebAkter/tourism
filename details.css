@@ -130,6 +130,14 @@
 }
 .msgBtn{
     border: none;
+    padding: 10px;
+    background-color: #5e4697;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.paymentBtn{
+    border: none;
     padding: 15px 30px;
     background-color: #5e4697;
     border-radius: 15px;

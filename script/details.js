@@ -25,6 +25,9 @@ function openPaymentPopup() {
     const dateInput = document.getElementById('selectedDate').value;
     const adults = document.getElementById('adults').value;
     const childs = document.getElementById('childs').value;
+    const price=localStorage.getItem("price");
+    const totalPrice=(parseInt(adults)+parseInt(childs))*price
+    document.getElementById("totalPrice").innerText=`Pay: RM ${totalPrice}`
     localStorage.setItem("date",dateInput)
     localStorage.setItem("adults",adults)
     localStorage.setItem("childs",childs);

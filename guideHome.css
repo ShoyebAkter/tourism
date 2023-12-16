@@ -10,3 +10,25 @@ h1{
     text-align: center;
     margin-block: 10px;
 }
+.mainContainer{
+    display: flex;
+    justify-content: space-around;
+
+}
+.details{
+    font-size: 20px;
+    font-weight: 600;
+    margin-block: 10px;
+}
+.detailsSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(246, 248, 250);
+    padding: 10px;
+}
+.detailsSection div{
+    font-weight: 300;
+    margin-block: 5px;
+}
