@@ -7,6 +7,7 @@ document.getElementById("tourguidename").innerHTML = name;
 
 // Function to open the popup
 function openPopup() {
+    
     document.getElementById('popup1').style.display = 'block';
 }
 
@@ -20,6 +21,26 @@ document.querySelector('.msgBtn').addEventListener('click', openPopup);
 
 // Attach click event listener to the close button in the popup
 document.querySelector('.close').addEventListener('click', closePopup);
+function openPaymentPopup() {
+    const dateInput = document.getElementById('selectedDate').value;
+    const adults = document.getElementById('adults').value;
+    const childs = document.getElementById('childs').value;
+    localStorage.setItem("date",dateInput)
+    localStorage.setItem("adults",adults)
+    localStorage.setItem("childs",childs);
+    document.getElementById('popup2').style.display = 'block';
+}
+
+// Function to close the popup
+function closePaymentPopup() {
+    document.getElementById('popup2').style.display = 'none';
+}
+
+// Attach click event listener to the "Message" button
+document.querySelector('.paymentBtn').addEventListener('click', openPaymentPopup);
+
+// Attach click event listener to the close button in the popup
+document.querySelector('.closePopUp').addEventListener('click', closePaymentPopup);
 
 const sendMsg = () => {
     const name=localStorage.getItem("guide")
@@ -42,6 +63,24 @@ const sendMsg = () => {
 }
 
 function showPaymentToast() {
+    const user=localStorage.getItem("userEmail")
+    const date=localStorage.getItem("date");
+    const adults=localStorage.getItem("adults");
+    const childs=localStorage.getItem("childs");
+    const guide=localStorage.getItem("guide");
+    const days=localStorage.getItem("days");
+    const place=localStorage.getItem("place");
+    const price=localStorage.getItem("price");
+    const paymentDetails={
+        user:user,
+        date:date,
+        adults:adults,
+        childs:childs,
+        guide:guide,
+        days:days,
+        place:place,
+        price:price,
+    }
     // Create a new toast element
     const toast = document.createElement("div");
     toast.className = "toast";
@@ -49,6 +88,12 @@ function showPaymentToast() {
     const cardNumber=document.getElementById("cardnumber").value;
     const expDate=document.getElementById("expirationdate").value;
     if(cardNumber && expDate){
+        fetch("http://localhost:3000/payment", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            }, body: JSON.stringify(paymentDetails)
+                        })
         document.getElementById("payment-toast-container").appendChild(toast);
   
         // Show the toast
