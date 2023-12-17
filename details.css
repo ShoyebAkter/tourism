@@ -664,10 +664,18 @@ input {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    max-width: 550px;
 }
 .nameInput{
-    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.nameInput label{
+    font-size: 18px;
+}
+.detailsInput{
     padding: 20px;
 }
 
@@ -693,6 +701,11 @@ input {
 /* Styling for the content inside the popup */
 .content {
     text-align: center;
+}
+textarea{
+    border-radius: 3px;
+    border: 1px solid #dcdcdc;
+    width: 100%;
 }
 
 /* Styling for the message textarea */

@@ -55,14 +55,18 @@ document.querySelector('.closePopUp').addEventListener('click', closePaymentPopu
 const sendMsg = () => {
     const name=localStorage.getItem("guide")
     const from=localStorage.getItem("userEmail")
-    console.log(name);
+    const place=localStorage.getItem("place")
     const msg=document.getElementById("msg").value;
+    const touristName=document.getElementById("touristName").value;
+    const tourisPhone=document.getElementById("touristPhone").value;
     const messageInfo={
+        touristName:touristName,
+        touristPhone:tourisPhone,
         name:name,
         message:msg,
-        from:from
+        from:from,
+        place:place
     }
-    console.log(messageInfo);
     fetch("http://localhost:3000/message",{
                         method:"POST",
                         headers:{
@@ -70,6 +74,7 @@ const sendMsg = () => {
                         },body:JSON.stringify(messageInfo)
                     })
     
+                    document.getElementById('popup1').style.display = 'none';
 }
 
 function showPaymentToast() {
