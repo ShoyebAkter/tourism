@@ -12,7 +12,7 @@
     <div class="detailsSection">
         <div class="guideDetails">
             <div class="nameSection">
-                <img src="./images/guides/fahan.png" alt="" />
+                <img id="imageGuide" alt="" />
                 <div>
                     <p id="name"></p>
                     <div><span class="rating">&#11088;&#11088;&#11088;&#11088;&#11088;</span>5.00/5</div>
@@ -65,7 +65,7 @@
         </div>
         <div class="bookingSection">
             <div class="nameSection">
-                <img src="./images/guides/fahan.png" alt="" />
+                <img id="guideImage" alt="" />
                 <div>
                     <p id="tourGuide"></p>
                     <div><a href="#popup1"><button class="msgBtn">Message <span id="tourguidename"></span></button></a>    
@@ -87,6 +87,10 @@
                     <label for="children">Children:</label>
                     <input id="childs" type="number"/>
                 </div>
+                <div class="peopleSection">
+                    <label for="location">Pick Location</label>
+                    <input id="location" type="text"/>
+                </div>
             </div>
             <div><a href="#popup2"><button class="paymentBtn">Confirm Payment</button></a>    
             </div>
@@ -94,6 +98,16 @@
                 <div class="popup">
                     <a class="close" href="#">&times;</a>
                     <div  class="content">
+                        <div>
+                            <div class="nameInput">
+                                <label>Name :</label>
+                            <input  type="text"/>
+                            </div>
+                            <div class="nameInput">
+                                <label>Phone Number :</label>
+                                <input type="number"/>
+                            </div>
+                        </div>
                         Write you message
                         <div><textarea id="msg"></textarea></div>
                         <button onclick="sendMsg()" class="msgBtn">Send</button>

@@ -130,7 +130,7 @@
 }
 .msgBtn{
     border: none;
-    padding: 10px;
+    padding: 15px;
     background-color: #5e4697;
     border-radius: 15px;
     margin-bottom: 10px;
@@ -664,7 +664,11 @@ input {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    
+    max-width: 550px;
+}
+.nameInput{
+    width: 150px;
+    padding: 20px;
 }
 
 /* Styling for the close button */
@@ -699,10 +703,7 @@ input {
 }
 
 
-  textarea{
-    width: 300px;
-    height: 100px;
-  }
+  
   /* Container for all toasts */
 #payment-toast-container {
     position: fixed;

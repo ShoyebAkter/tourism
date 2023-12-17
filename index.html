@@ -90,7 +90,7 @@
                         <span class="rating">&#11088;&#11088;&#11088;&#11088;&#11088;</span>
                         <h2>Malacca Adventure</h2>
                         <p class="cost">RM1870 / Per Person</p>
-                        <div id="malaccaCard" onclick="moveToGuide('Malacca','170','3days')" class="card-box">
+                        <div id="malaccaCard"  class="card-box">
                             <p class="time">&#128339; 3 Days</p>
                             <p class="location">&#9992; Malacca, Malaysia</p>
                         </div>
@@ -108,7 +108,7 @@
                         <span class="rating">&#11088;&#11088;&#11088;&#11088;&#11088;</span>
                         <h2>Suria Adventure</h2>
                         <p class="cost">RM1870 / Per Person</p>
-                        <div id="suriaCard" onclick="moveToGuide('Suria','170','3days')" class="card-box">
+                        <div id="suriaCard" class="card-box">
                             <p class="time">&#128339; 3 Days</p>
                             <p class="location">&#9992; Suria, Malaysia</p>
                         </div>
@@ -126,7 +126,7 @@
                         <span class="rating">&#11088;&#11088;&#11088;&#11088;&#11088;</span>
                         <h2>Langkawi Adventure</h2>
                         <p class="cost">RM1870 / Per Person</p>
-                        <div id="LangkawiCard" onclick="moveToGuide('Langkawi','170','3days')" class="card-box">
+                        <div id="langkawiCard" class="card-box">
                             <p class="time">&#128339; 3 Days</p>
                             <p class="location">&#9992; Langkawi, Malaysia</p>
                         </div>
@@ -144,7 +144,7 @@
                         <span class="rating">&#11088;&#11088;&#11088;&#11088;&#11088;</span>
                         <h2>Genting Adventure</h2>
                         <p class="cost">RM1870 / Per Person</p>
-                        <div id="gentingCard" onclick="moveToGuide('Genting','170','3days')" class="card-box">
+                        <div id="gentingCard" class="card-box">
                             <p class="time">&#128339; 3 Days</p>
                             <p class="location">&#9992; Genting, Malaysia</p>
                         </div>
@@ -162,7 +162,7 @@
                         <span class="rating">&#11088;&#11088;&#11088;&#11088;&#11088;</span>
                         <h2>Cameron Adventure</h2>
                         <p class="cost">RM1870 / Per Person</p>
-                        <div id="cameronCard" onclick="moveToGuide('Cameron','170','3days')" class="card-box">
+                        <div id="cameronCard"  class="card-box">
                             <p class="time">&#128339; 3 Days</p>
                             <p class="location">&#9992; Cameron, Malaysia</p>
                         </div>
@@ -180,7 +180,7 @@
                         <span class="rating">&#11088;&#11088;&#11088;&#11088;&#11088;</span>
                         <h2>Batu Adventure</h2>
                         <p class="cost">RM1870 / Per Person</p>
-                        <div id="batuCard" onclick="moveToGuide('Batu','170','3days')" class="card-box">
+                        <div id="batuCard"  class="card-box">
                             <p class="time">&#128339; 3 Days</p>
                             <p class="location">&#9992; Batu, Malaysia</p>
                         </div>
@@ -392,27 +392,24 @@
                 authSection.innerHTML = `
                 <div id="loginButton">Login</div>
                 `;
-                document.getElementById('loginButton').onclick = function () {
-                    window.location.href = "login.html"
-                }
-                document.getElementById('malaccaCard').onclick = function () {
-                    window.location.href = "login.html"
-                }
-                document.getElementById('batuCard').onclick = function () {
-                    window.location.href = "login.html"
-                }
-                document.getElementById('cameronCard').onclick = function () {
-                    window.location.href = "login.html"
-                }
-                document.getElementById('gentingCard').onclick = function () {
-                    window.location.href = "login.html"
-                }
-                document.getElementById('langkawiCard').onclick = function () {
-                    window.location.href = "login.html"
-                }
-                document.getElementById('suriaCard').onclick = function () {
-                    window.location.href = "login.html"
-                }
+                malaccaCard.addEventListener('click', function () {
+                    window.location.href="login.html"
+                });
+                suriaCard.addEventListener('click', function () {
+                   window.location.href="login.html"
+                });
+                langkawiCard.addEventListener('click', function () {
+                    window.location.href="login.html"
+                });
+                gentingCard.addEventListener('click', function () {
+                    window.location.href="login.html"
+                });
+                cameronCard.addEventListener('click', function () {
+                    window.location.href="login.html"
+                });
+                batuCard.addEventListener('click', function () {
+                    window.location.href="login.html"
+                });
             }
         });
 

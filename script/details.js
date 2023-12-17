@@ -1,9 +1,14 @@
 const name = localStorage.getItem("guide")
+const image=localStorage.getItem("image")
 console.log(name);
 document.getElementById("name").innerHTML = name;
 document.getElementById("guideName").innerHTML = name;
 document.getElementById("tourGuide").innerHTML = name;
 document.getElementById("tourguidename").innerHTML = name;
+const guideImage = document.getElementById('guideImage');
+const guideImage2 = document.getElementById('imageGuide');
+guideImage.src=image;
+guideImage2.src=image;
 
 // Function to open the popup
 function openPopup() {
@@ -26,11 +31,13 @@ function openPaymentPopup() {
     const adults = document.getElementById('adults').value;
     const childs = document.getElementById('childs').value;
     const price=localStorage.getItem("price");
+    const pickUpLocation=localStorage.getItem("location");
     const totalPrice=(parseInt(adults)+parseInt(childs))*price
     document.getElementById("totalPrice").innerText=`Pay: RM ${totalPrice}`
     localStorage.setItem("date",dateInput)
     localStorage.setItem("adults",adults)
     localStorage.setItem("childs",childs);
+    localStorage.setItem("pickUpLocation",pickUpLocation)
     document.getElementById('popup2').style.display = 'block';
 }
 
@@ -74,6 +81,7 @@ function showPaymentToast() {
     const days=localStorage.getItem("days");
     const place=localStorage.getItem("place");
     const price=localStorage.getItem("price");
+    const pickUpLocation=localStorage.getItem("pickUpLocation");
     const paymentDetails={
         user:user,
         date:date,
@@ -83,6 +91,7 @@ function showPaymentToast() {
         days:days,
         place:place,
         price:price,
+        pickUpLocation:pickUpLocation
     }
     // Create a new toast element
     const toast = document.createElement("div");
