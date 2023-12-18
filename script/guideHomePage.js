@@ -4,7 +4,7 @@ const detailsContainer = document.getElementById('detailsSection');
     const getMessage=async()=>{
         let messages;
         const name=localStorage.getItem("guideName")
-        await fetch(`https://backendtour.vercel.app/${name}`)
+        await fetch(`https://backendtour.vercel.app/message/${name}`)
         .then((res) => res.json())
         .then((result) => {messages=result })
         .catch((error) => console.error(error))

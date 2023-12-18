@@ -37,7 +37,7 @@
                     <h1>Find your Next tour!</h1>
                 </div>
                 <form class="form">
-                    <input type="text" list="mylist" placeholder="Where would you like to go?">
+                    <input type="text" list="mylist" id="places" placeholder="Where would you like to go?">
                     <datalist id="mylist">
                         <option>Malacca</option>
                         <option>Suria</option>
@@ -46,8 +46,8 @@
                         <option>Cameron</option>
                         <option>Batu</option>
                     </datalist>
-                    <input type="date" class="date">
-                    <a href="#" class="book">book</a>
+                    <input id='bookingDate' type="date" class="date">
+                    <div id="bookBtn" class="book">book</div>
                 </form>
             </div>
         </section>
@@ -334,6 +334,9 @@
         const batuCard = document.getElementById('batuCard');
         const langkawiCard = document.getElementById('langkawiCard');
         const authSection = document.getElementById("authSection");
+        const bookingPlace = document.getElementById("places");
+        const bookingDate = document.getElementById("bookingDate");
+        const bookBtn = document.getElementById("bookBtn");
         onAuthStateChanged(auth, (user) => {
 
             console.log(user);
@@ -352,7 +355,10 @@
                             console.log(error);
                         });
                 }
-                
+                bookBtn.addEventListener('click',function(){
+                    moveToGuide(bookingPlace.value,'170','3days');
+                    // console.log(bookingPlace.value,bookingDate.value);
+                })
 
                 // Add a click event listener
                 malaccaCard.addEventListener('click', function () {
@@ -384,6 +390,9 @@
                 authSection.innerHTML = `
                 <div id="loginButton">Login</div>
                 `;
+                bookBtn.addEventListener('click',function(){
+                    window.location.href="login.html"
+                })
                 malaccaCard.addEventListener('click', function () {
                     window.location.href="login.html"
                 });
@@ -418,7 +427,9 @@
             localStorage.setItem("place", place)
                 localStorage.setItem("price", price)
                 localStorage.setItem("days", days)
-                window.location.href = "guide.html"
+                if(place){
+                    window.location.href = "guide.html"
+                }
 
         }
     </script>
