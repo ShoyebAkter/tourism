@@ -67,7 +67,7 @@ const sendMsg = () => {
         from:from,
         place:place
     }
-    fetch("http://localhost:3000/message",{
+    fetch("https://backendtour.vercel.app/message",{
                         method:"POST",
                         headers:{
                             "Content-Type":"application/json"
@@ -105,7 +105,7 @@ function showPaymentToast() {
     const cardNumber=document.getElementById("cardnumber").value;
     const expDate=document.getElementById("expirationdate").value;
     if(cardNumber && expDate){
-        fetch("http://localhost:3000/payment", {
+        fetch("https://backendtour.vercel.app/payment", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"

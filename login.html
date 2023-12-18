@@ -89,7 +89,7 @@
                 .then(async function (userCredential) {
                     var user = userCredential.user;
                     localStorage.setItem("guideName",loginName)
-                    await fetch('http://localhost:3000/user')
+                    await fetch('https://backendtour.vercel.app/user')
                         .then((res) => res.json())
                         .then((result) => { emailInfo = result })
                         .catch((error) => console.error(error))
@@ -97,9 +97,10 @@
                         email: loginEmail,
                         name:loginName
                     }
+                    console.log(emailInfo);
                     const isEmailInArray = emailInfo.some(obj => obj.email === loginEmail);
                     if (!isEmailInArray) {
-                        fetch("http://localhost:3000/user", {
+                        fetch("https://backendtour.vercel.app/user", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"

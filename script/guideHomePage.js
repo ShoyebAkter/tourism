@@ -4,13 +4,13 @@ const detailsContainer = document.getElementById('detailsSection');
     const getMessage=async()=>{
         let messages;
         const name=localStorage.getItem("guideName")
-        await fetch(`http://localhost:3000/message/${name}`)
+        await fetch(`https://backendtour.vercel.app/${name}`)
         .then((res) => res.json())
         .then((result) => {messages=result })
         .catch((error) => console.error(error))
 
         let payment;
-        await fetch(`http://localhost:3000/payment`)
+        await fetch(`https://backendtour.vercel.app/payment`)
         .then((res) => res.json())
         .then((result) => {payment=result })
         .catch((error) => console.error(error))
