@@ -31,7 +31,7 @@ function openPaymentPopup() {
     const adults = document.getElementById('adults').value;
     const childs = document.getElementById('childs').value;
     const price=localStorage.getItem("price");
-    const pickUpLocation=localStorage.getItem("location");
+    const pickUpLocation=document.getElementById("location").value;
     const totalPrice=(parseInt(adults)+parseInt(childs))*price
     document.getElementById("totalPrice").innerText=`Pay: RM ${totalPrice}`
     localStorage.setItem("date",dateInput)
@@ -116,6 +116,7 @@ function showPaymentToast() {
         // Show the toast
         setTimeout(function () {
           toast.style.display = "block";
+          document.getElementById('popup2').style.display = 'none';
         }, 200);
       
         // Hide the toast after 3 seconds

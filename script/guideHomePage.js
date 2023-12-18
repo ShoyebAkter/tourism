@@ -22,7 +22,14 @@ const detailsContainer = document.getElementById('detailsSection');
           
         let itemsHTML;
         itemsHTML =messages.map((msg,id)=>
-            `<div class="messageBox"><div>From :${msg.from}</div><div>Message:${msg.message}</div></div>`
+            `<div class="messageBox">
+            <div>From :${msg.from}</div>
+            <div>TouristName: ${msg.touristName}</div>
+            <div>TouristPhone: ${msg.touristPhone}</div>
+            <div>TourPlace: ${msg.place}</div>
+            <div>Message:${msg.message}</div>
+            
+            </div>`
         ).join('');
         let detailsHtml;
         detailsHtml =filteredObjects.map((value,id)=>
@@ -33,6 +40,7 @@ const detailsContainer = document.getElementById('detailsSection');
             <div>No of Days Tour: ${value.days}</div>
             <div>Adults: ${value.adults} Childs: ${value.childs}</div>
             <div>Place: ${value.place}</div>
+            <div>Pickup Location: ${value.pickUpLocation}</div>
             <div>TotalPrice: ${(parseInt(value.adults)+parseInt(value.childs))*value.price}</div>
             </div>
             
