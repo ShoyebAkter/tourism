@@ -3,8 +3,16 @@ const detailsContainer = document.getElementById('detailsSection');
 
     const getMessage=async()=>{
         let messages;
-        const name=localStorage.getItem("guideName")
-        await fetch(`https://backendtour.vercel.app/message/${name}`)
+        const loginEmail=localStorage.getItem("loginEmail");
+        let emailInfo;
+        await fetch('https://backendtour.vercel.app/user')
+        .then((res) => res.json())
+        .then((result) => { emailInfo = result })
+        .catch((error) => console.error(error))
+        const userObject = emailInfo.find(obj => obj.email === loginEmail);
+        // console.log(userObject);
+
+        await fetch(`https://backendtour.vercel.app/message/${userObject.name}`)
         .then((res) => res.json())
         .then((result) => {messages=result })
         .catch((error) => console.error(error))
@@ -16,9 +24,9 @@ const detailsContainer = document.getElementById('detailsSection');
         .catch((error) => console.error(error))
         // console.log(payment);
         const filteredObjects = payment.filter(function(obj) {
-            return obj.guide === 'Tahsin';
+            return obj.guide === userObject.name;
           });
-          console.log(filteredObjects);
+        //   console.log(filteredObjects);
           
         let itemsHTML;
         itemsHTML =messages.map((msg,id)=>
@@ -46,7 +54,7 @@ const detailsContainer = document.getElementById('detailsSection');
             
             `
         ).join('');
-        console.log(detailsHtml);
+        // console.log(detailsHtml);
         itemContainer.innerHTML = itemsHTML;
         detailsContainer.innerHTML = detailsHtml;
     }
