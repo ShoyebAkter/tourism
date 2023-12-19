@@ -13,7 +13,7 @@
 
 
     <div class="particle" id="particles-js">
-
+        <div id="login-toast-container"></div>
         <div class="container" id="container">
             <div class="form-container sign-up">
                 <form>
@@ -110,6 +110,7 @@
 
                 })
                 .catch(function (error) {
+                    showErrorToast(error)
                     console.error("Error creating user:", error);
                 });
         }
@@ -142,6 +143,7 @@
 
                 })
                 .catch(function (error) {
+                    showErrorToast(error)
                     console.error("Error creating user:", error);
                 });
         }
