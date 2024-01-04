@@ -148,6 +148,7 @@ ul.menu {
     padding: 1% 2%;
 }
 
+.banner-text-item select,
 .banner-text-item input,
 .banner-text-item .date,
 .banner-text-item .book {
@@ -160,6 +161,11 @@ ul.menu {
     border: none;
 }
 
+
+.banner-text-item select {
+    width: 50%;
+    flex: 2;
+}
 .banner-text-item input {
     width: 50%;
     flex: 2;

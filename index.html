@@ -19,7 +19,7 @@
         <ul class="menu">
             <li><a href="#">home</a></li>
             <li><a href="#tour">tours</a></li>
-            <li><a href="#tour">package</a></li>
+            <li><a href="myorder.html">My Order</a></li>
             <li><a href="#about">about us</a></li>
             <li><a href="#contactUs">contact us</a></li>
             <li><a id="authSection">
@@ -37,15 +37,15 @@
                     <h1>Find your Next tour!</h1>
                 </div>
                 <form class="form">
-                    <input type="text" list="mylist" id="places" placeholder="Where would you like to go?">
-                    <datalist id="mylist">
-                        <option>Malacca</option>
-                        <option>Suria</option>
-                        <option>Langkawi</option>
-                        <option>Genting</option>
-                        <option>Cameron</option>
-                        <option>Batu</option>
-                    </datalist>
+                    <select id="places" placeholder="Where would you like to go?">
+                        <option value="" disabled selected>Select a destination</option>
+                        <option value="Malacca">Malacca</option>
+                        <option value="Suria">Suria</option>
+                        <option value="Langkawi">Langkawi</option>
+                        <option value="Genting">Genting</option>
+                        <option value="Cameron">Cameron</option>
+                        <option value="Batu">Batu</option>
+                    </select>
                     <input id='bookingDate' type="date" class="date">
                     <div id="bookBtn" class="book">book</div>
                 </form>
